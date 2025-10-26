@@ -6,3 +6,5 @@ A cipher machine that generates unique keys using multiple data sources, includi
 - Stock and currency markets  
 
 To use, you need to get a free API key from https://twelvedata.com (it's free and easy to use) and add it to `datafetcher.js` on line 1.
+
+# Keep an eye on the console - all logs, key info, and errors will appear there.
