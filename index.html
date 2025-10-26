@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ultimate Crypt</title>
+  <style>
+    body {
+      background: #0e0e0e;
+      color: #eaeaea;
+      font-family: monospace;
+      padding: 30px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      background: #1a1a1a;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 6px;
+      resize: none;
+    }
+button {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid rgb(43, 255, 0);
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+button:hover {
+  background: rgb(0, 255, 0);
+  box-shadow: 0 0 30px 5px rgb(0, 255, 0);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+    pre {
+      background: #151515;
+      padding: 10px;
+      border-radius: 6px;
+      color: #0f0;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ultimate Crypt</h1>
+
+  <textarea id="inputText" placeholder="Type smth..."></textarea>
+  <button id="generate">Generate a key and encrypt</button>
+
+  <h3>Encryption result:</h3>
+  <pre id="output"></pre>
+
+  <h3>Decrypt:</h3>
+  <input id="keyInput" placeholder="Type key (SHA-256 HEX)">
+  <input id="ivInput" placeholder="Type IV (HEX)">
+  <textarea id="cipherInput" placeholder="Type Decrypted Text (HEX)..."></textarea>
+  <button id="decrypt">Decrypt</button>
+  <pre id="decryptedOutput"></pre>
+
+  <script type="module" src="./main.js"></script>
+  <footer>
+    <p style="text-align: center; margin-top: 40px; color: #555;">
+      &copy; Zhan Sailau (KyodaN).
+    </p>
+</body>
+</html>
